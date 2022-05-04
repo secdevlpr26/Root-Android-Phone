@@ -1,0 +1,80 @@
+In the Mobile:
+----------------
+Settings -> About Phone -> Build Number - Tap it 7 times to enable the Developer Options -> Enter PIN Passcode
+Settings -> System -> Advanced -> Developer Options -> Enable OEM unlocking -> Enter PIN Passcode
+Settings -> System -> Advanced -> Developer Options -> Enable USB Debugging - To use ADB
+Download the Latest version of MAgisk Manager - https://github.com/topjohnwu/Magisk/releases/tag/v24.3
+Other Magisk Useful Links:
+https://github.com/topjohnwu/Magisk
+https://topjohnwu.github.io/Magisk/install.html
+https://topjohnwu.github.io/Magisk/
+Tap on Magisk Manager APK and tap on Install 
+
+In the System:
+---------------
+Download Google USB Drivers for ADB and Fastboot - https://developer.android.com/studio/run/win-usb
+Download SDK Platform Tools - https://developer.android.com/studio/releases/platform-tools.html
+Check the Build Number of the Android device and Download the same Factory Image from the internet - https://developers.google.com/android/images#angler
+Extract all the zip files and Place everything on the same Folder; Extract the boot.img outside
+Find the .inf file -> Right click -> Click on Install. 
+Add adb in the environment path variable
+Perform ADB push of boot.img from the system to the connected mobile device.
+
+In the Mobile:
+----------------
+Tap on Install - against Magisk not installed 
+Tap on Install again
+Select and patch a file
+Select boot.img from the internal storage
+Keep note of the patch image file location
+
+In the System:
+---------------
+Perform adb pull of that patch image file from mobile device to the system
+
+In the Mobile:
+----------------
+Power of the device and disconnect the USB Cable
+Hold power and volumen down for a few seconds (Fastboot Mode screen shows up) - Device state is locked
+
+In the System:
+---------------
+Type "fastboot devices" in cmd
+Device Manager -> Android Device -> Android Bootloader Interface (Because of Google USB driverS installation)
+Type "fastboot flashing unlock" in the cmd - Device status is changed 
+
+In the Mobile:
+----------------
+Volume Up/Volume down - Unlock the bootloader - Press the Button
+Press the Button to resume
+Installation steps
+Restart the Device
+Hiold Volume Down button after screen turns black - Bootloader screen
+
+In the System:
+---------------
+Type "fastboot devices" in cmd
+Type "fastboot flash boot <Magisk path from the system>"  - boot is the partition - the place where we want to install magisk in our mobile device
+Type "fastboot reboot"
+
+In the Mobile:
+----------------
+Download MAgisk manager like before and install it
+Launch Magisk Manager - It says we are up to date 
+Requires additional setup
+Restarting the phone
+Settings -> System -> Developer Options -> Disable Automatic updates
+
+
+
+
+
+
+
+
+
+
+
+
+
+
